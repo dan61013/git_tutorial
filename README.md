@@ -14,17 +14,13 @@ Table of contents:
   - [05 Checkout](#05-checkout)
     - [05-1 HEAD](#05-1-head)
     - [05-2 Branch](#05-2-branch)
-- [\<\<\<\<\<\<\< HEAD](#-head)
   - [06 Fork](#06-fork)
   - [07 Git Flow](#07-git-flow)
   - [08 Tag](#08-tag)
-  - [06 Fork](#06-fork-1)
-  - [07 Git Flow](#07-git-flow-1)
-  - [08 Tag](#08-tag-1)
   - [09 修改Commit](#09-修改commit)
     - [09-1 Reset](#09-1-reset)
+    - [09-2 Amend](#09-2-amend)
     - [10 Rebase](#10-rebase)
->>>>>>> 3489342b3169882c8af41f112ab724e57f53ccaf
 
 ## 01 Local Repository
 
@@ -100,49 +96,6 @@ Table of contents:
 1. 切回*main*分支 -> `git checkout main`
 2. 將*develop*合併到*main*上 -> `git merge develop`
 3. 合併完成
-<<<<<<< HEAD
-=======
-
-## 06 Fork
-
-步驟:
-
-1. 進入其他人的repository
-2. 點擊`Fork`按鈕(會將repository複製一份到自己的GitHub上)
-3. 修改檔案(略)
-4. 然後再透過`pull requests`向原作者提交修改申請
-
-## 07 Git Flow
-
-多人協作時定義的主要5種分支:
-
-- **Main**: 穩定、上線中的版本。
-- **Develop**: 開發中的版本分支，測試穩定後合併到*main*。
-- Feature Branch: 新增功能時使用的分支，完成後會合併到*develop*。
-- Hotfix Branch: 緊急修復分支，當*main*分支的上線版本發生問題時，會建立此分支進行修復。
-- Release Brach: 預發布分支，當*develop*分支功能測試差不多後，就可以合併到此分支上，在上線到*main*分支前最終測試的環節。
-
-## 08 Tag
-
-> 標籤與分支十分相似，而分支會隨著commit移動，標籤則不會。
-
-可以把`tag`想成**標記點**，而且儲存位置也與`branch`不同
-
-`tag`共分為2種類型:
-
-- Lightweight tag: 通常用於私有情境中
-- Annotated tag: 帶有標記的tag，通常用於正式、發布版本
-
-步驟:
-
-1. 查詢目前所有commit的SHA-1碼 -> `git log --oneline` (一行式顯示log)
-2. 新增tag -> `git tag TagName CommitSHA-1`
-3. 查看tag -> `git tag`
-4. 新增Annotated tag的方式為:
-   1. `git tag TagName CommitSHA-1 -a -m "MessageContent"`
-
-※ 查看指定關鍵字的tag -> `git tag -l "Content*"`
->>>>>>> 3489342b3169882c8af41f112ab724e57f53ccaf
 
 ## 06 Fork
 
@@ -214,6 +167,14 @@ Table of contents:
 7. `git push -u origin main`
 8. 完成修改歷史紀錄中的一筆commit，並上傳最新的commit
    ![git_reset](./img//p002_git_revised.png)
+
+※ `Reset`後有產生衝突，但沒有正常處理，導致README(修改部分)出現重複內容。
+
+### 09-2 Amend
+
+> 直接修改最新一次的commit
+
+指令: `git commit --amend -m "CommitMessage"`
 
 ### 10 Rebase
 
