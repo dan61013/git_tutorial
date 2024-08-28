@@ -14,14 +14,16 @@ Table of contents:
   - [05 Checkout](#05-checkout)
     - [05-1 HEAD](#05-1-head)
     - [05-2 Branch](#05-2-branch)
+- [\<\<\<\<\<\<\< HEAD](#-head)
   - [06 Fork](#06-fork)
   - [07 Git Flow](#07-git-flow)
   - [08 Tag](#08-tag)
-<<<<<<< HEAD
+  - [06 Fork](#06-fork-1)
+  - [07 Git Flow](#07-git-flow-1)
+  - [08 Tag](#08-tag-1)
   - [09 修改Commit](#09-修改commit)
     - [09-1 Reset](#09-1-reset)
     - [10 Rebase](#10-rebase)
-=======
 >>>>>>> 3489342b3169882c8af41f112ab724e57f53ccaf
 
 ## 01 Local Repository
@@ -200,6 +202,18 @@ Table of contents:
 
 - 修改上一次 -> `git reset main^` or `git reset HEAD^`
 - 修改某一次 -> `git reset SHA-1`
+
+步驟:
+
+1. `git reset SHA-1`
+2. `git add .`
+3. `git commit -m "NewCommitMessage"`: 輸入要修改的commit message
+4. `git pull`將HEAD指回最新的SHA-1
+5. `git add .`
+6. `git commit -m "TheLatestCommitMessage"`: 輸入最新(當前HEAD)的commit message
+7. `git push -u origin main`
+8. 完成修改歷史紀錄中的一筆commit，並上傳最新的commit
+   ![git_reset](./img//p002_git_revised.png)
 
 ### 10 Rebase
 
