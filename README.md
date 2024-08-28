@@ -74,6 +74,14 @@
 
 1. 先新增branch `git branch BranchName`
 2. 切換到新增的branch(*develop*) -> `git checkout develop`
+3. 接著執行`git add .`、`git commit -m`、`git push -u origin develop`，將修改紀錄新增到*develop*
+
+這樣的作法讓*main*和*develop*產生差異(*develop*的版本較新)，因此將*develop*合併到*main*上。
+
+步驟:
+
+1. 切回*main*分支 -> `git checkout main`
+2. 將*develop*合併到*main*上 -> `git merge develop`
 
 Reference:
 
