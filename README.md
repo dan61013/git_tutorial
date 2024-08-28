@@ -170,6 +170,8 @@ Table of contents:
 8. 完成修改歷史紀錄中的一筆commit，並上傳最新的commit
    ![git_reset](./img//p002_git_revised.png)
 
+※ reset測試使用。
+
 ### 09-2 Amend
 
 > 直接修改最新一次的commit
