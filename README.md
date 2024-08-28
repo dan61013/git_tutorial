@@ -151,6 +151,8 @@ Table of contents:
 
 [參考資源](https://gitbook.tw/chapters/using-git/reset-commit)
 
+※ 嘗試使用`reset`與`--amend`都失敗，原因是我已經執行push指令了，所以會產生衝突(**diverged**)。
+
 指令:
 
 - 修改上一次 -> `git reset main^` or `git reset HEAD^`
@@ -167,8 +169,6 @@ Table of contents:
 7. `git push -u origin main`
 8. 完成修改歷史紀錄中的一筆commit，並上傳最新的commit
    ![git_reset](./img//p002_git_revised.png)
-
-※ `Reset`後有產生衝突，但沒有正常處理，導致README(修改部分)出現重複內容。
 
 ### 09-2 Amend
 
