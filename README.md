@@ -8,6 +8,7 @@ Table of contents:
 
 - [Git Tutorial](#git-tutorial)
   - [01 Local Repository](#01-local-repository)
+    - [0-1 存入Repository流程](#0-1-存入repository流程)
   - [02 Remote Repository](#02-remote-repository)
   - [03 Clone](#03-clone)
   - [04 Pull](#04-pull)
@@ -21,6 +22,7 @@ Table of contents:
     - [09-1 Reset](#09-1-reset)
     - [09-2 Amend](#09-2-amend)
     - [10 Rebase](#10-rebase)
+  - [11 Stash](#11-stash)
 
 ## 01 Local Repository
 
@@ -34,6 +36,18 @@ Table of contents:
 5. `git commit -m "MessageContent"`: 從Index commit到local repository
 6. 使用`git status`查看狀態
 7. `git log`可以查看完整的commit資訊
+
+### 0-1 存入Repository流程
+
+[Reference](https://roykwokcode.medium.com/%E8%AE%93%E4%BD%A0%E7%9A%84%E4%BB%A3%E7%A2%BC%E5%9B%9E%E5%88%B0%E9%81%8E%E5%8E%BB-git-reset-%E8%88%87-git-revert-%E7%9A%84%E7%94%A8%E8%99%95-6ba4b7545690)
+
+Git共分為3個工作區塊:
+
+1. Working directory: Folder, files
+2. Stage snapshot: 暫存區，存放檔案快照
+3. .git directory: 提交檔案快照永久儲存在Git
+
+※ `git reset`的相關用法新增在[09-1 reset](#09-1-reset)
 
 ## 02 Remote Repository
 
@@ -172,6 +186,10 @@ Table of contents:
 
 ※ reset測試使用。
 
+補充:
+
+`git reset --hard HEAD`這個指令會將所有directory的資料全部都重置。
+
 ### 09-2 Amend
 
 > 直接修改最新一次的commit
@@ -196,3 +214,15 @@ Table of contents:
 
 - Skip -> `git rebase --skip`
 - 退出 -> `git rebase --abort`
+
+## 11 Stash
+
+指令: `git stash`
+
+查詢暫存清單: `git stash list`
+
+取出暫存檔案指(All): `git stash pop`
+
+取出單一暫存檔: `git pop n`
+
+※ `n`可以透過查詢暫存清單指令取得
